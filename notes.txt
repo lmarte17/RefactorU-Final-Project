@@ -1,0 +1,59 @@
+Name Ideas:
+
+Canary; bulletin; gazzette; anchor; grapevine; chatterbox; au courant;
+
+_____________________________________________________________________________
+
+
+APIs:
+
+newsapi.org
+API key: b5a5796607794df6ada10b439d80729a
+
+
+http://api.wunderground.com/api/fb6c8a3bc598c038/conditions/q/CA/San_Francisco.json
+API key: fb6c8a3bc598c038
+
+_____________________________________________________________________________
+
+Color Scheme:
+ - Blue, Gray, yellow
+
+
+Layout:
+- Cards
+    - sidescrolling: touch on mobile, side arrows on larger screens;
+    - use the box turning effect
+
+
+_____________________________________________________________________________
+What makes sense?
+Order of page:
+  1 - nav-bar
+  2 - title animation - parallax
+  3 - News stories - Angular single page app effect (ng route)
+        -News for you
+        -world
+        -local
+        -etc
+  4 - about; contact; etc - single page (ng route)
+  5 - footer
+
+
+____________________________________________________________________________
+
+Tasks:
+ - Angular: routing (done)
+ - API: display as cards (done)
+ - modals (done)
+ - jump to spot
+ - load local func on init load
+ - new logo?
+ - Responsiveness
+
+
+ _______________________________________
+
+ Questions:
+  - jump to spot on page
+  - load function on page load

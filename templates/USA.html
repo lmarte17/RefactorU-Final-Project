@@ -1,0 +1,25 @@
+<div class="container-fluid news-view">
+  <h3 class="title">'Murican (Real) News</h3>
+    <hr />
+    <div class="row">
+      <div ng-repeat="article in ctrl.cData.articles">
+        <div class="col-xs-6 col-md-4 col-lg-3">
+            <div class="card small">
+                <div class="card-image">
+                    <img src="{{ article.urlToImage }}">
+                    <span class="card-title med-font">{{ article.title }}</span>
+                </div>
+                <div class="card-content">
+                    <p class="small-font">{{ article.description }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{ article.url }}" target="_blank">Link to Article</a>
+                    <span class="right">
+                      <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
