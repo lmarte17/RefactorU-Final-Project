@@ -29,27 +29,27 @@ Layout:
 _____________________________________________________________________________
 What makes sense?
 Order of page:
-  1 - nav-bar
-  2 - title animation - parallax
-  3 - News stories - Angular single page app effect (ng route)
-        -News for you
-        -world
-        -local
-        -etc
-  4 - about; contact; etc - single page (ng route)
-  5 - footer
+  1 - Landing page - Login/Register or Info page
+  2 - Profile page
+        - look to features
+
+
+
+  Features:
+    - trending terms
+    - login with google/facebook/linkedin/twitter
+    - token-based authentication
+    - notifications on certain topics
+    - screen shoot articles, instead of loading full pages
+    - sidebar
+    - progressive web app
 
 
 ____________________________________________________________________________
 
 Tasks:
- - Angular: routing (done)
- - API: display as cards (done)
- - modals (done)
- - jump to spot
- - load local func on init load
- - new logo?
- - Responsiveness
+    - Authentication : Nov 15
+    - Integrate Auth with FE
 
 
  _______________________________________
