@@ -1,11 +1,27 @@
 angular.module('myApp')
     .controller('AppController', appController)
-    .config(myRouter);
+    .controller('AuthController', authController)
+    .config(loginRouter)
+    .config(mainRouter);
 
+loginRouter.$inject = ['$routeProvider'];
 myRouter.$inject = ['$routeProvider'];
 appController.$inject = ['$http'];
 
-function myRouter($routeProvider) {
+function loginRouter($routeprovider) {
+  $routeProvider
+      .when('/', {
+          templateUrl: 'templates/home.html'
+      })
+      .when('/login', {
+          templateUrl: 'templates/login.html'
+      })
+      .when('/register', {
+          templateUrl: 'templates/register.html'
+      })
+};
+
+function mainRouter($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'templates/world.html'
@@ -35,4 +51,41 @@ function appController($http) {
         console.log('Failure: ' + res);
       });
     };
+}
+
+function authController($http) {
+  var auth = this,
+      alertError = ['alert', 'alert-danger'];
+
+  auth.payload = {};
+
+  auth.login = {
+    submit: function($event) {
+      console.debug('Login.Submit');
+      $http.post('/login', auth.payload).then(auth.login.success, auth.login.error);
+    },
+    success: function(res) {
+      console.info('auth.login.success');
+      location.href = "/profile"
+    },
+    error: function(err) {
+      console.error('Login.error');
+      auth.login.alert = alertError;
+      auth.login.message = err.data && err.data.message || 'Login Failed!';
+    }
+  };
+  auth.register = {
+    submit: function($event) {
+      $http.post('/register', auth.payload).then(auth.register.success, auth.register.error);
+    },
+    success: function(res) {
+      console.info('auth.register.success');
+      location.href = '/profile';
+    },
+    error: function(err) {
+      console.error('Register: error', err);
+      auth.register.alert = alertError;
+      auth.register.message = err.data && err.data.message || 'Registration filed!';
+    }
+  };
 }

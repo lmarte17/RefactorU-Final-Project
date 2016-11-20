@@ -18,7 +18,7 @@ var express = require('express'),
       }
     }); // cookies are now encrypted
 
-mongoose.connect('mongodb://localhost/news-database')
+mongoose.connect('mongodb://localhost/newsdb')
 
 var app = express();
 
@@ -42,8 +42,8 @@ Routes(app);
 //     title: 'Welcome'
 //   });
 // });
-//
-// app.use('/profile',stormpath.loginRequired,require('./profile')());
+
+// app.use('/index',stormpath.loginRequired,require('./index')());
 //
 // app.on('stormpath.ready',function(){
 //   console.log('Stormpath Ready');

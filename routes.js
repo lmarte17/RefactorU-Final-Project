@@ -18,5 +18,5 @@ module.exports = (app) => {
   app.post('/api/users', User.create);
   app.get('/api/users', User.get);
   app.get('/api/users/:id', User.get);
-  app.use(express.static(path.join(__dirname, 'public/html')));
+  app.use(express.static(path.join(__dirname, 'public')));
 }
