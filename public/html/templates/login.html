@@ -1,0 +1,16 @@
+<div class="tab-pane active" id="Login">
+    <form role="form" ng-submit="auth.login.submit($event)" class="form-horizontal">
+        <div class="form-group">
+            <label for="email">
+            Email</label>
+            <input type="email" ng-model="auth.payload.email" class="form-control" id="email" placeholder="Email" />
+        <label for="password">Password</label>
+        <input required type="password" class="form-control" ng-model="auth.payload.password" placeholder="Password" />
+        <button type="submit" class="btn btn-primary btn-sm" value="Login">
+                Submit</button>
+        <div id="my-signin2" class="g-signin2 centered" data-onsuccess="onSignIn"></div>
+        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+        <a href="#">Forgot your password?</a>
+      </div>
+    </form>
+</div>

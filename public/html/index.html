@@ -36,7 +36,7 @@
       </button>
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#/world" ng-click="ctrl.getNews('cnn')"><img src="https://goo.gl/Ye2k69" class="logo"></a>
+                    <a href="#/world" ng-click="ctrl.getNews('cnn')"><img src="images/logo.jpg" class="logo"></a>
                 </li>
               </ul>
                 <div class="collapse navbar-collapse" id="myNavbar">
@@ -56,9 +56,6 @@
                 <li>
                     <a href="#info-box">Information</a>
                 </li>
-                <li>
-                    <a data-toggle="modal" data-target="#signup-modal"><span class="glyphicon glyphicon-user"></span>Login or Sign Up</a>
-                </li>
             </ul>
         </div>
       </div>
@@ -71,115 +68,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Large modal -->
-    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    ×</button>
-                    <h4 class="modal-title" id="myModalLabel">
-                    Login/Registration</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
-                                <li><a href="#Registration" data-toggle="tab">Registration</a></li>
-                            </ul>
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="Login">
-                                    <form role="form" class="form-horizontal">
-                                        <div class="form-group">
-                                            <label for="email" class="col-sm-2 control-label">
-                                        Email</label>
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="email1" placeholder="Email" />
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1" class="col-sm-2 control-label">
-                                        Password</label>
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-2">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <button type="submit" class="btn btn-primary btn-sm">
-                                            Submit</button>
-                                                <a href="#">Forgot your password?</a>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="tab-pane" id="Registration">
-                                    <form role="form" class="form-horizontal">
-                                        <div class="form-group">
-                                            <label for="email" class="col-sm-2 control-label">
-                                        Name</label>
-                                            <div class="col-sm-10">
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <select class="form-control">
-                                                    <option>Mr.</option>
-                                                    <option>Ms.</option>
-                                                    <option>Mrs.</option>
-                                                </select>
-                                                    </div>
-                                                    <div class="col-md-9">
-                                                        <input type="text" class="form-control" placeholder="Name" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email" class="col-sm-2 control-label">
-                                        Email</label>
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="email" placeholder="Email" />
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="mobile" class="col-sm-2 control-label">
-                                        Mobile</label>
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="mobile" placeholder="Mobile" />
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password" class="col-sm-2 control-label">
-                                        Password</label>
-                                            <div class="col-sm-10">
-                                                <input type="password" class="form-control" id="password" placeholder="Password" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-2">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <button type="button" class="btn btn-primary btn-sm">
-                                            Save & Continue</button>
-                                                <button type="button" class="btn btn-default btn-sm">
-                                            Cancel</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 
     <ng-view id="angView">

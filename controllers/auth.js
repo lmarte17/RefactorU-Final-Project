@@ -28,7 +28,7 @@ module.exports = {
           } else {
             req.session.userId = user._id;
             res.send({ message: 'Login Successful!'});
-            // res.redirect('/');
+            res.redirect('/index');
           }
         })
       }

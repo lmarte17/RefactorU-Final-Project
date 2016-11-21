@@ -3,6 +3,7 @@ var express = require('express'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
+    fileserver = express.static('public'),
     path = require('path'),
     Routes = require('./routes'),
     PORT = process.env.PORT || 5050,
@@ -27,6 +28,7 @@ var app = express();
 // Middleware
 app.use(morgan('dev'));
 app.use(sessions);
+app.use(fileserver);
 app.use(bodyParser.urlencoded({ extended:true }), bodyParser.json());
 // app.use(stormpath.init(app, {
 //   expand: {
@@ -43,8 +45,8 @@ Routes(app);
 //   });
 // });
 
-// app.use('/index',stormpath.loginRequired,require('./index')());
-//
+// app.use('/index',stormpath.loginRequired,require('./public/html/index')());
+
 // app.on('stormpath.ready',function(){
 //   console.log('Stormpath Ready');
 // });

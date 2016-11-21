@@ -5,38 +5,38 @@ angular.module('myApp')
     .config(mainRouter);
 
 loginRouter.$inject = ['$routeProvider'];
-myRouter.$inject = ['$routeProvider'];
+mainRouter.$inject = ['$routeProvider'];
 appController.$inject = ['$http'];
 
-function loginRouter($routeprovider) {
+function loginRouter($routeProvider) {
   $routeProvider
       .when('/', {
-          templateUrl: 'templates/home.html'
+          templateUrl: 'html/templates/home.html'
       })
       .when('/login', {
-          templateUrl: 'templates/login.html'
+          templateUrl: 'html/templates/login.html'
       })
       .when('/register', {
-          templateUrl: 'templates/register.html'
+          templateUrl: 'html/templates/register.html'
       })
 };
 
 function mainRouter($routeProvider) {
     $routeProvider
-        .when('/', {
-            templateUrl: 'templates/world.html'
-        })
+        // .when('/', {
+        //     templateUrl: 'templates/world.html'
+        // })
         .when('/world', {
-            templateUrl: 'templates/world.html'
+            templateUrl: 'html/templates/world.html'
         })
         .when('/USA', {
-            templateUrl: 'templates/USA.html'
+            templateUrl: 'html/templates/USA.html'
         })
         .when('/sports', {
-            templateUrl: 'templates/sports.html'
+            templateUrl: 'html/templates/sports.html'
         })
         .when('/local', {
-            templateUrl: 'templates/local.html'
+            templateUrl: 'html/templates/local.html'
         })
 };
 

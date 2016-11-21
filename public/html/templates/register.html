@@ -1,0 +1,47 @@
+
+    <div class="tab-pane" id="Registration">
+        <form role="form" ng-submit="auth.register.submit($event)" class="form-horizontal">
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">
+        Name</label>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input type="text" ng-model="auth.payload.name" class="form-control" placeholder="Name" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">
+        Email</label>
+                <div class="col-sm-10">
+                    <input type="email" ng-model="auth.payload.email" class="form-control" id="email" placeholder="Email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="username" class="col-sm-2 control-label">
+        Username</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-model="auth.payload.username" class="form-control" id="username" placeholder="Username" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-2 control-label">
+        Create Password</label>
+                <div class="col-sm-10">
+                    <input type="password" ng-model="auth.payload.password" class="form-control" id="password" placeholder="Password" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary btn-sm">
+            Register</button>
+                    <button type="button" href="/login.html"class="btn btn-default btn-sm">
+            Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>

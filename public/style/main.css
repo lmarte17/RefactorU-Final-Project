@@ -33,6 +33,14 @@ hr {
     padding: 0;
 }
 
+.logo-main {
+  height: 50px;
+  width: 180px;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 0;
+}
+
 li a {
   padding: 0;
   font-size: 18px;
@@ -83,12 +91,17 @@ li a {
   text-align: right;
 }
 
+.centered {
+  text-align: center;
+  margin: auto;
+}
+
 .card:hover {
   box-shadow: 10px 10px 5px rgb(80, 80, 80);
 }
 
 #ngView {
-
+  z-index: 1;
 }
 
 .news-view {
@@ -149,23 +162,20 @@ div#OR {
   font-style: 'Cormorant Garamond', serif;
 }
 
+/*------Video-Background------------------*/
+
 .homepage-hero-module {
     border-right: none;
     border-left: none;
     position: relative;
 }
-
-.center {
-  z-index: 10;
-}
-
 .no-video .video-container video,
 .touch .video-container video {
     display: none;
 }
 .no-video .video-container .poster,
 .touch .video-container .poster {
-    display: block;
+    display: block !important;
 }
 .video-container {
     position: relative;
@@ -174,7 +184,6 @@ div#OR {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    background: #000;
 }
 .video-container .poster img {
     width: 100%;
@@ -190,8 +199,57 @@ div#OR {
 .video-container video {
     position: absolute;
     z-index: -1;
-    bottom: 0;
+    top: 0;
 }
 .video-container video.fillWidth {
     width: 100%;
 }
+
+.main-box {
+  width: 55%;
+  /*background-color: linear-gradient(to bottom right, rgba(35, 38, 52, .5), rgba(37, 109, 65, .5));*/
+  background-color: rgba(66,43,27,.7);
+  color: #daffff;
+  text-align: center;
+  margin-top: 10%;
+  font-family: 'Ruslan Display', cursive;
+  font-size: 35px;
+}
+
+/*.right {
+  text-align: right;
+}
+
+.btn {
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+    box-shadow: none;
+    background-color: rgba (0, 0, 0, 0.1);
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    z-index: 2;
+}
+.btn-primary:active, .btn-primary.active {
+    background: rgba (0, 0, 0, 0.1);
+    box-shadow: none;
+}
+
+.dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: 0 none;
+  box-shadow: none;
+}
+
+.dropdown-menu:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: 0 none;
+  box-shadow: none;
+}*/
