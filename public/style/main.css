@@ -96,6 +96,10 @@ li a {
   margin: auto;
 }
 
+.margin {
+  margin: 10px;
+}
+
 .card:hover {
   box-shadow: 10px 10px 5px rgb(80, 80, 80);
 }
