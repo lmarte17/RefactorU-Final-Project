@@ -1,54 +1,44 @@
-var express = require('express'),
-    stormpath = require('express-stormpath'),
-    morgan = require('morgan'),
-    bodyParser = require('body-parser'),
-    mongoose = require('mongoose'),
-    fileserver = express.static('public'),
-    path = require('path'),
-    Routes = require('./routes'),
-    PORT = process.env.PORT || 5050,
-    sessions = require('client-sessions')({
-      cookieName: 'news-session',
-      secret: 'New$!!',
-      requestKey: 'session',
-      duration: (86400 * 1000) * 7,
-      cookie: {
-        ephemeral: false, //true = expires when browser closes
-        httpOnly: true,   //true = cookie is not accessible via FE JS
-        secure: false     //true = will only be read via HTTPS
-      }
-    }); // cookies are now encrypted
+require('colors') // awesome colors in your console logs!
 
-mongoose.connect('mongodb://localhost/newsdb')
+var config = require('./package'),
+    express = require('express'), // our framework!
+    bodyParser = require('body-parser'), // used for POST routes to obtain the POST payload as a property on `req`
+    logger = require('morgan')('dev'), // log the routes being accessed by the frontend
+    fileserver = express.static('public'), // turn the public folder into a file server
+    mongoose = require('mongoose').connect('mongodb://localhost/'.concat(config.name), ( error ) => {
+        if( error ) {
+            console.error('ERROR starting mongoose!', error);
+            process.exit(128);
+        } else {
+            console.info('Mongoose connected to MongoDB successfully'.yellow);
+        }
+    }),
+    sessions = require('client-sessions')({ // session cookie
+        cookieName : config.name, // cookie name (within document.cookies on the Frontend)
+        secret: '$ecret', // encryption secret
+        requestKey: 'session', // stores the session cookie in req.session
+        duration: (86400 * 1000) * 7, // one week in milliseconds
+        cookie: {
+            ephemeral: false,   // when true, cookie expires when the browser closes
+            httpOnly: true,     // when true, cookie is not accessible from javascript
+            secure: false       // when true, cookie will only be sent over SSL;
+        }
+    }),
+    app = express(), // initialize express
+    port = process.env.PORT||5050; // server port
 
-var app = express();
+// server setup
+app.use(
+    logger,    // mounting dev logging
+    sessions,  // mounting HTTPs session cookies
+    fileserver, // mounting the static middlware
+    bodyParser.json(), // mount the body-parsing middleware (parse payloads into req.body)
+    bodyParser.urlencoded({ extended:true })
+);
+// do all the routing stuff in a separate file by passing a reference of the app!
+require('./routes')(app);
 
-//app.set('views', './views');
-
-// Middleware
-app.use(morgan('dev'));
-app.use(sessions);
-app.use(fileserver);
-app.use(bodyParser.urlencoded({ extended:true }), bodyParser.json());
-// app.use(stormpath.init(app, {
-//   expand: {
-//     customData: true
-//   }
-// }));
-
-// Routes
-Routes(app);
-
-// app.get('/', stormpath.getUser, function(req, res) {
-//   res.render('home', {
-//     title: 'Welcome'
-//   });
-// });
-
-// app.use('/index',stormpath.loginRequired,require('./public/html/index')());
-
-// app.on('stormpath.ready',function(){
-//   console.log('Stormpath Ready');
-// });
-
-app.listen(PORT);
+// start the server
+app.listen(port, () => {
+    console.log('Login Server Started on port:', port.toString().cyan)
+});

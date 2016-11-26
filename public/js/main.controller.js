@@ -66,7 +66,7 @@ function authController($http) {
     },
     success: function(res) {
       console.info('auth.login.success');
-      location.href = "/profile"
+      location.href = "html/index.html"
     },
     error: function(err) {
       console.error('Login.error');
@@ -80,7 +80,7 @@ function authController($http) {
     },
     success: function(res) {
       console.info('auth.register.success');
-      location.href = '/profile';
+      location.href = '/#/login';
     },
     error: function(err) {
       console.error('Register: error', err);
