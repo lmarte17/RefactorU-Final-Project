@@ -30,13 +30,13 @@ var User = require('../models/user'),
 module.exports = {
     render: (req, res) => {
         if( req.session.uid ) {
-            return res.redirect('/index'); // if the user already has a session cookie, just place them into the dashboard
+            return res.redirect('/dashboard'); // if the user already has a session cookie, just place them into the dashboard
         } else {
             res.render('auth', req.session); // render the authenticaiton page (register/login)
         }
     },
     logout: (req, res) => {
-        req.session.reset(); // clears the users cookie session
+        req.session.destroy(); // clears the users cookie session
         res.redirect('/#/login');
     },
     login: (req, res) => {

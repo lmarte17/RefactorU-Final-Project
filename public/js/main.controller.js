@@ -13,6 +13,9 @@ function loginRouter($routeProvider) {
       .when('/', {
           templateUrl: 'html/templates/home.html'
       })
+      .when('/dashboard', {
+          templateUrl: 'dashboard.html/#/world'
+      })
       .when('/login', {
           templateUrl: 'html/templates/login.html'
       })
@@ -27,21 +30,32 @@ function mainRouter($routeProvider) {
         //     templateUrl: 'templates/world.html'
         // })
         .when('/world', {
-            templateUrl: 'html/templates/world.html'
+            templateUrl: 'templates/world.html'
         })
         .when('/USA', {
-            templateUrl: 'html/templates/USA.html'
+            templateUrl: 'templates/USA.html'
         })
         .when('/sports', {
-            templateUrl: 'html/templates/sports.html'
+            templateUrl: 'templates/sports.html'
         })
-        .when('/local', {
-            templateUrl: 'html/templates/local.html'
+        .when('/finance', {
+            templateUrl: 'templates/finance.html'
         })
+        .when('/entertainment', {
+            templateUrl: 'templates/entertainment.html'
+        })
+        .when('/tech', {
+            templateUrl: 'templates/tech.html'
+        })
+        .when('/politics', {
+            templateUrl: 'templates/politics.html'
+        })
+
 };
 
 function appController($http) {
     var ctrl = this;
+
     ctrl.getNews = function(source) {
       $http.get('https://newsapi.org/v1/articles?source=' + source + '&apiKey=b5a5796607794df6ada10b439d80729a')
       .then(function(res, status) {
@@ -49,6 +63,19 @@ function appController($http) {
         ctrl.cData = res.data;
       }, function(res, status) {
         console.log('Failure: ' + res);
+      });
+    };
+
+    ctrl.searchNews = function() {
+      ctrl.term = {
+    word : ""
+  };
+      $http.get('https://gateway-a.watsonplatform.net/calls/data/GetNews?outputMode=json&start=now-1d&end=now&count=10&q.enriched.url.enrichedTitle.keywords.keyword.text=' + ctrl.term.word + '&return=enriched.url.url,enriched.url.title&apikey=6d28c763a4daa1873b960aca0f95abddca2b6709')
+      .then(function(res, status) {
+        console.log(res.data);
+        ctrl.sData = res.data;
+      }, function(res, status) {
+        console.log('Failiure: ' + res);
       });
     };
 }

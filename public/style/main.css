@@ -7,6 +7,11 @@ hr {
   length: 50%;
   color: #9D9D99;
 }
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
 .nav-bar {
   background: linear-gradient(to bottom right, #232634, #265d41);
   position: fixed;
@@ -50,7 +55,7 @@ li a {
     background-image: url("https://goo.gl/6koq5d");
     speed: .5;
     z-index: -10;
-    min-height: 1000px;
+    min-height: 600px;
     height: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -61,7 +66,7 @@ li a {
 #info-box {
     background-image: url("https://goo.gl/DQvwQc");
     /*data-speed: .5;*/
-    min-height: 1000px;
+    min-height: 600px;
     z-index: 1;
     height: 100%;
     background-attachment: fixed;
@@ -94,6 +99,7 @@ li a {
 .centered {
   text-align: center;
   margin: auto;
+  padding-top: 5px;
 }
 
 .margin {
@@ -110,7 +116,7 @@ li a {
 
 .news-view {
   display: inline-block;
-  background: linear-gradient(to bottom right, #232634, #265d41);
+  background: linear-gradient(to bottom right, rgb(35, 38, 52), rgb(38, 93, 65));
   width: 100%;
 }
 

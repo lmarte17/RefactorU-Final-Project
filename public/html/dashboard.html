@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <title>Layouts &raquo; Hero Sidebar</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Ruslan+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:500" rel="stylesheet">
+    <link rel="stylesheet" href="../style/main.css">
+    <!-- <link rel="stylesheet" href="../style/keen-db.css" /> -->
+    <link rel="stylesheet" href="../style/demo-styles.css">
+    <link rel="stylesheet" href="../style/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.js"></script>
+    <script src="https://use.fontawesome.com/964a2f7774.js"></script>
+    <script src="../js/parallax.js-1.4.2/parallax.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/main.module.js"></script>
+    <script src="../js/main.controller.js"></script>
+</head>
+
+<body ng-controller="AppController as ctrl">
+  <div class="right">
+    <button class="btn btn-primary" type="button"><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+    </button>
+</div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 col-lg-2 sidebar2">
+                <div class="logo text-center">
+                    <img src="../images/Picture.jpg" class="img-responsive center-block" alt="Logo">
+                    <h4>Luis Marte</h4>
+
+                </div>
+                <br>
+
+                <div class="left-navigation">
+
+                    <ul class="list">
+
+                        <li>
+                          <a href="#/world" ng-click="ctrl.getNews('cnn')"><i class="fa fa-globe" aria-hidden="true"></i>World</a>
+                        </li>
+                        <li>
+                          <a href="#/USA" ng-click="ctrl.getNews('associated-press')">
+                          <i class="fa fa-university" aria-hidden="true"></i>'murica</a>
+                        </li>
+                        <li>
+                          <a href="#/finance" ng-click="ctrl.getNews('the-wall-street-journal')">
+                          <i class="fa fa-money" aria-hidden="true"></i>Finance</a>
+                        </li>
+                        <li>
+                          <a href="#/sports" ng-click="ctrl.getNews('espn')">
+                          <i class="fa fa-futbol-o" aria-hidden="true"></i>Sports</a>
+                        </li>
+                        <li>
+                          <a href="#/entertainment" ng-click="ctrl.getNews('entertainment-weekly')">
+                          <i class="fa fa-ticket" aria-hidden="true"></i>Entertainment</a>
+                        </li>
+                        <li>
+                          <a href="#/tech" ng-click="ctrl.getNews('techcrunch')">
+                          <i class="fa fa-mobile" aria-hidden="true"></i>Tech</a>
+                        </li>
+                        <li>
+                          <a href="#/politics" ng-click="ctrl.getNews('the-new-york-times')">
+                          <i class="fa fa-trash" aria-hidden="true"></i>Politics
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-8 col-lg-10 col-sm-offset-4 col-md-offset-4 col-lg-offset-2 main-content">
+
+                <div class="demo-wrapper">
+
+                    <!--each tile should specify what page type it opens (to determine which animation) and the corresponding page name it should open-->
+                    <!-- <div class="dashboard clearfix"> -->
+                        <ng-view id="angView">
+
+                        </ng-view>
+                      <!-- </div> -->
+
+                    <!--end dashboard-->
+
+                </div>
+
+            </div>
+
+            <p class="small text-muted">Built with &#9829; by <a href="https://marte.io">Marte IO</a></p>
+
+        </div>
+        <div class="twitter-box col-sm-4 col-md-4 col-lg-5 col-sm-offset-4 col-md-offset-4 col-lg-offset-2">
+            <a class="twitter-timeline" data-width="600" data-height="600" data-theme="dark" href="https://twitter.com/luis_refactoru/lists/news">A Twitter List by luis_refactoru</a>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <div class="search-news col-sm-4 col-md-4 col-lg-5 col-sm-offset-8 col-md-offset-8 col-lg-offset-7">
+          <form ng-submit="ctrl.searchNews()">
+          <input type="text" ng-model="ctrl.term.word" />
+          <input type="submit" />
+        </form>
+          <div ng repeat="item in ctrl.sData.enriched.url">
+          <a href="{{ item.url }}"<p>
+            {{ item.title }}
+          </p></a>
+        </div>
+        </div>
+
+        <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script> -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.js"></script>
+        <script>
+            Holder.add_theme("white", {
+                background: "#fff",
+                foreground: "#a7a7a7",
+                size: 10
+            });
+        </script>
+
+</body>
+
+</html>

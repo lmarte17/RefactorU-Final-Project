@@ -1,0 +1,247 @@
+*{
+	/* A universal CSS reset */
+	margin:0;
+	padding:0;
+}
+
+body{
+	font-size:14px;
+	color:#666;
+	background:#111 no-repeat;
+
+	 /*CSS3 Radial Gradients */
+	background-image:-moz-radial-gradient(center -100px 45deg, circle farthest-corner, #444 150px, #111 300px);
+	background-image:-webkit-gradient(radial, 50% 0, 150, 50% 0, 300, from(#444), to(#111));
+
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#navigationMenu li{
+	list-style:none;
+	height:39px;
+	padding:2px;
+	width:40px;
+}
+
+#navigationMenu span{
+	/* Container properties */
+	width:0;
+	left:38px;
+	padding:0;
+	position:absolute;
+	overflow:hidden;
+
+	/* Text properties */
+	font-family:'Myriad Pro',Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	letter-spacing:0.6px;
+	white-space:nowrap;
+	line-height:39px;
+
+	/* CSS3 Transition: */
+	-webkit-transition: 0.25s;
+
+	/* Future proofing (these do not work yet): */
+	-moz-transition: 0.25s;
+	transition: 0.25s;
+}
+
+#navigationMenu a{
+	 /*The background sprite:*/
+	background:url('img/navigation.jpg') no-repeat;
+
+	height:39px;
+	width:38px;
+	display:block;
+	position:relative;
+}
+
+/* General hover styles */
+
+#navigationMenu a:hover span{ width:auto; padding:0 20px;overflow:visible; }
+#navigationMenu a:hover{
+	text-decoration:none;
+
+	/* CSS outer glow with the box-shadow property */
+	-moz-box-shadow:0 0 5px #9ddff5;
+	-webkit-box-shadow:0 0 5px #9ddff5;
+	box-shadow:0 0 5px #9ddff5;
+}
+
+/* Green Button */
+
+#navigationMenu .home {	background-position:0 0;}
+#navigationMenu .home:hover {	background-position:0 -39px;}
+#navigationMenu .home span{
+	background-color:#7da315;
+	color:#3d4f0c;
+	text-shadow:1px 1px 0 #99bf31;
+}
+
+/* Blue Button */
+
+#navigationMenu .about { background-position:-38px 0;}
+#navigationMenu .about:hover { background-position:-38px -39px;}
+#navigationMenu .about span{
+	background-color:#1e8bb4;
+	color:#223a44;
+	text-shadow:1px 1px 0 #44a8d0;
+}
+
+/* Orange Button */
+
+#navigationMenu .services { background-position:-76px 0;}
+#navigationMenu .services:hover { background-position:-76px -39px;}
+#navigationMenu .services span{
+	background-color:#c86c1f;
+	color:#5a3517;
+	text-shadow:1px 1px 0 #d28344;
+}
+
+/* Yellow Button */
+
+#navigationMenu .portfolio { background-position:-114px 0;}
+#navigationMenu .portfolio:hover{ background-position:-114px -39px;}
+#navigationMenu .portfolio span{
+	background-color:#d0a525;
+	color:#604e18;
+	text-shadow:1px 1px 0 #d8b54b;
+}
+
+/* Purple Button */
+
+#navigationMenu .contact { background-position:-152px 0;}
+#navigationMenu .contact:hover { background-position:-152px -39px;}
+#navigationMenu .contact span{
+	background-color:#af1e83;
+	color:#460f35;
+	text-shadow:1px 1px 0 #d244a6;
+}
+
+/* side-menu */
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+html,body, .container-fluid, .sidebar2,.main-content{
+  height:100%;
+}
+.sidebar2 {
+    background-color: #1a1f27;
+    padding: 0px !important;
+    box-shadow: 2px 2px 5px #262a35;
+    z-index: 1000;
+    height: 100%;
+    position: fixed;
+
+}
+.logo {
+    min-height:200px;
+    color:#afb1b5;
+}
+.logo>img {
+    margin-top: 30px;
+    padding: 1px;
+    border: 3px solid #F17153;
+    border-radius: 100%;
+    background-color: #fff;
+    height: 100px;
+    width: 100px;
+}
+.btn.Add-friend
+{
+  background-color:#F17153;
+<!--#e65e50-->
+  border: 1px solid #50e6df;
+  color:#eee;
+}
+.btn.Add-friend:hover,.btn.Add-friend:active,.btn.Add-friend:active:focus,.btn.Add-friend:active:hover,.btn.Add-friend:visited,.btn.Add-friend:focus
+{
+  background-color:#F17153;
+  border: 0.5px solid transparent;
+  color:white;
+  outline:none;
+  font-weight:600;
+}
+.coins
+{
+  display:inline-block;
+  font-size:20px;
+font-family:'"Helvetica Neue",Helvetica,Arial,sans-serif';
+}
+.list {
+    color: #eee;
+    list-style: none;
+    padding-left: 0px;
+}
+li:nth-child(odd) {
+    background-color:#13171d;
+}
+li>i {margin-right:15px;
+}
+.list> li {
+    padding: 15px 0px 15px 40px;
+    font-size: 16px;
+    font-weight:lighter;
+}
+.list>li:hover {
+
+    color: white;
+    box-shadow:1px 1px 10px 1px #50e6df inset;
+    transition: padding-left 0.2s linear;
+    padding-left: 60px;
+
+}
+body
+{
+    background-image: url("https://goo.gl/DQvwQc");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -10;
+   }
+.main-content{
+    /*color:#fff;*/
+    text-align:center;
+}
+
+.right {
+  text-align: right;
+}
+
+.btn {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+    box-shadow: none;
+    background-color: rgba (0, 0, 0, 0);
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    z-index: 2;
+}
+.btn-primary:active, .btn-primary.active {
+    background: rgba (0, 0, 0, 0);
+    box-shadow: none;
+}
+
+.dropdown-menu {
+  background-color: rgba(0, 0, 0, 0);
+  outline: 0 none;
+  box-shadow: none;
+}
+
+.dropdown-menu:hover {
+  background-color: rgba(0, 0, 0, 0);
+  outline: 0 none;
+  box-shadow: none;
+}

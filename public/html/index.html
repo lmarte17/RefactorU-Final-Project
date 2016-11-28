@@ -36,7 +36,7 @@
       </button>
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#/world" ng-click="ctrl.getNews('cnn')"><img src="images/Logo.jpg" class="logo"></a>
+                    <a href="#/world" ng-click="ctrl.getNews('cnn')"><img src="../images/Logo.jpg" class="logo"></a>
                 </li>
               </ul>
                 <div class="collapse navbar-collapse" id="myNavbar">
@@ -51,7 +51,16 @@
                     <a href="#/sports" ng-click="ctrl.getNews('espn')">Sports</a>
                 </li>
                 <li>
-                    <a href="#/local" ng-click="ctrl.getNews('the-new-york-times')">Local</a>
+                    <a href="#/politics" ng-click="ctrl.getNews('the-new-york-times')">Politics</a>
+                </li>
+                <li>
+                    <a href="#/finance" ng-click="ctrl.getNews('the-wall-street-journal')">Politics</a>
+                </li>
+                <li>
+                    <a href="#/entertainment" ng-click="ctrl.getNews('entertainment-weekly')">Entertainment</a>
+                </li>
+                <li>
+                    <a href="#/tech" ng-click="ctrl.getNews('techcrunch')">Tech</a>
                 </li>
                 <li>
                     <a href="/logout">Logout</a>
@@ -76,9 +85,21 @@
 
     <div id="info-box" class="parallax-window container-fluid" data-parallax="scroll">
 
-        <div class="twitter-box">
-            <a class="twitter-timeline" data-width="600" data-height="900" data-theme="dark" href="https://twitter.com/luis_refactoru/lists/news">A Twitter List by luis_refactoru</a>
-            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <div class="twitter-box col-sm-4 col-md-4 col-lg-5">
+          <a class="twitter-timeline" data-width="600" data-height="600" data-theme="dark" href="https://twitter.com/luis_refactoru/lists/news">A Twitter List by luis_refactoru</a>
+          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+
+        <div class="search-news col-sm-4 col-md-4 col-lg-5 col-sm-offset-5 col-md-offset-5 col-lg-offset-5">
+          <form ng-submit="ctrl.searchNews()">
+          <input type="text" ng-model="ctrl.term.word" />
+          <input type="submit" />
+        </form>
+          <div ng repeat="item in ctrl.sData.enriched.url">
+          <a href="{{ item.url }}"<p>
+            {{ item.title }}
+          </p></a>
+        </div>
         </div>
     </div>
 

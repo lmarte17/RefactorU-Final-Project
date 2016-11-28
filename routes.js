@@ -12,11 +12,14 @@ module.exports = (app) => {
   app.get('/logout', Auth.logout);
   app.post('/login', Auth.login);
   app.post('/register', Auth.register);
-  // app.get('/', Auth.middleware.session);
-  // app.all('/api*', Auth.middleware.session);
+  app.get('/', Auth.session);
+  app.all('/api*', Auth.session);
   app.all('/index*', Auth.session);
   app.get('/index', (req,res) => {
     res.sendFile('/index.html', req.session);
+  });
+  app.get('/dashboard', (req,res) => {
+    res.sendFile('/dashboard.html#/sports')
   });
   app.post('/api/users', User.create);
   app.get('/api/users', User.get);
