@@ -245,3 +245,12 @@ body
   outline: 0 none;
   box-shadow: none;
 }
+
+
+.search-news {
+  background-color: linear-gradient(to bottom right, rgba(35, 38, 52, .5), rgb(38, 93, 65, .5));
+  border: 2px black;
+  box-shadow: 2px 2px 5px #262a35;
+  z-index: 1;
+  float: right;
+}

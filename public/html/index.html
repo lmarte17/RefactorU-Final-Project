@@ -90,16 +90,24 @@
           <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
 
-        <div class="search-news col-sm-4 col-md-4 col-lg-5 col-sm-offset-5 col-md-offset-5 col-lg-offset-5">
+        <div class="col-sm-3 col-md-3 col-lg-4 col-sm-offset-8 col-md-offset-8 col-lg-offset-7" style="background-color: #3c7360;
+        border: 5px black;
+        box-shadow: 5px 5px 7px #262a35;
+        z-index: 1;
+        float: right;">
           <form ng-submit="ctrl.searchNews()">
-          <input type="text" ng-model="ctrl.term.word" />
+          <input type="text" ng-model="ctrl.searchTerm" />
           <input type="submit" />
         </form>
-          <div ng repeat="item in ctrl.sData.enriched.url">
-          <a href="{{ item.url }}"<p>
-            {{ item.title }}
-          </p></a>
-        </div>
+
+        <!-- {{ctrl.sData.result.docs}} -->
+          <ul>
+              <li ng-repeat="item in ctrl.sData.result.docs">
+                <a href="{{ item.source.enriched.url.url }}">
+                  {{ item.source.enriched.url.title }}</a>
+              </li>
+
+        </ul>
         </div>
     </div>
 

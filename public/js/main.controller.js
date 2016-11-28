@@ -67,10 +67,8 @@ function appController($http) {
     };
 
     ctrl.searchNews = function() {
-      ctrl.term = {
-    word : ""
-  };
-      $http.get('https://gateway-a.watsonplatform.net/calls/data/GetNews?outputMode=json&start=now-1d&end=now&count=10&q.enriched.url.enrichedTitle.keywords.keyword.text=' + ctrl.term.word + '&return=enriched.url.url,enriched.url.title&apikey=6d28c763a4daa1873b960aca0f95abddca2b6709')
+      console.log("Searching for: ", ctrl.searchTerm);
+      $http.get('https://gateway-a.watsonplatform.net/calls/data/GetNews?outputMode=json&start=now-1d&end=now&count=10&q.enriched.url.enrichedTitle.keywords.keyword.text=' + ctrl.searchTerm + '&return=enriched.url.url,enriched.url.title&apikey=b700e4a78a460875c08ab7ec249e588fb2e5276a')
       .then(function(res, status) {
         console.log(res.data);
         ctrl.sData = res.data;
@@ -93,7 +91,7 @@ function authController($http) {
     },
     success: function(res) {
       console.info('auth.login.success');
-      location.href = "html/index.html"
+      location.href = "html/index.html#/world"
     },
     error: function(err) {
       console.error('Login.error');

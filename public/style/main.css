@@ -52,7 +52,7 @@ li a {
 }
 
 #title-box {
-    background-image: url("https://goo.gl/6koq5d");
+    background-image: url("../images/top-image.jpeg");
     speed: .5;
     z-index: -10;
     min-height: 600px;
@@ -64,7 +64,7 @@ li a {
 }
 
 #info-box {
-    background-image: url("https://goo.gl/DQvwQc");
+    background-image: url("../images/bottom-image.jpeg");
     /*data-speed: .5;*/
     min-height: 600px;
     z-index: 1;
